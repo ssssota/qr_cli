@@ -11,10 +11,12 @@ use structopt::StructOpt;
 #[structopt(name = "qr")]
 struct Opt {
     /// Input text
+    /// If not specified, stdin will be used.
     #[structopt(short, long)]
     input: Option<String>,
 
     /// Output file
+    /// Accepted file formats are png, jpg, svg.
     #[structopt(short, long, parse(from_os_str))]
     output: Option<PathBuf>,
 }
